@@ -71,8 +71,8 @@ void undef(char *name)
     else{
         struct nlist *np, *prenp;
 
-        for (np = prenp = hashtab[hash(s)]; np != NULL; prenp = np, np = np->next)
-            if (strcmp(s, np->name) == 0)
+        for (np = prenp = hashtab[hash(name)]; np != NULL; prenp = np, np = np->next)
+            if (strcmp(name, np->name) == 0)
                 break;
     
         free((void *)np->name);
